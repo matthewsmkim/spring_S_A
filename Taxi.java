@@ -1,18 +1,16 @@
 package S_A;
-public class Taxi extends PublicTransport {
+public class Taxi extends PublicTransport{
 
-    int taxi_number;
-    String destination;
-    int distance_to_destination;
+    int taxi_Number;
+    
     int basicDistance = 1;
     int basicFare = 3000;
-    int fare_per_distance = 1000;
+    int fare_Per_distance = 1000;
 
 
     Taxi(){
         
-        this.max_passenger = 4;
-        this.fare = 3000;
+        this.max_Passenger = 4;
         this.status = "Normal";
    
 
@@ -26,17 +24,32 @@ public class Taxi extends PublicTransport {
     
   
     // taxi number
-    public int get_Taxi_Number() {
-        this.taxi_number = (int) (Math.random()) * 9999 + 1;
-        return this.taxi_number;
+    
+    public int get_taxi_number() {
+        this.taxi_Number = (int) (Math.random()) * 9999 + 1;
+        
+        return this.taxi_Number;
         }
     
-    // Charge
-    public int surCharge(int distance){      
 
-        return fare_per_distance * distance;
+
+
+    
+    
+    
+        // Charge
+    public int surcharge(int distance){      
+
+        return fare_Per_distance * distance;
     
         
+    }
+
+    public void location(String destination, int distance_To_destination){
+
+        System.out.println("Destination = "+ destination);
+        System.out.println("The distance to destination = " + distance_To_destination);
+
     }
     
 
@@ -45,9 +58,17 @@ public class Taxi extends PublicTransport {
     // pay
     public int get_payment(int distance){
     
-    return basicFare+(fare_per_distance * distance);
+        return basicFare+(fare_Per_distance * distance);
     }
     
+    public void get_taxi_states_info() {
+        System.out.println(("State = " + status));
+        System.out.println("cc = " + this.current_Oil);
+        if (this.current_Oil < 10) {
+        System.out.println("Now Empty");
+        }
+        
+        }
     
     
     public static void main(String[] args){
@@ -55,17 +76,15 @@ public class Taxi extends PublicTransport {
         Taxi taxi1 = new Taxi();
         
         taxi1.board(2);
+        taxi1.location("Seoul Station", 2);
+        taxi1.get_payment(2);
+        taxi1.get_taxi_states_info();
     
-    // bus1.current_oil(-50);
-    // bus1.post_states(false);
-    // bus1.current_oil(10);
-    // bus1.get_bus_states_info();
-    // bus1.post_states(true);
-    // bus1.board(45);
-    // bus1.board(5);
-    // bus1.current_oil(-55);
-    // bus1.get_bus_states_info();
+
+        
     
     
     }
+
 }
+

@@ -1,12 +1,13 @@
 package S_A;
+
 public class PublicTransport {
     int current_Oil = 100;
-    int current_speed = 0;
-    boolean change_speed;
+    int current_Speed = 0;
+    boolean change_Speed;
     int fare;
 
-    int current_passenger;
-    int max_passenger = 30;
+    int current_Passenger;
+    int max_Passenger;
    
   
     String status;
@@ -15,14 +16,15 @@ public class PublicTransport {
     // change the speed
     public int getCurrent_speed(int power) {
         if (current_Oil >= 10) {
-        this.status = "ing";
-        this.current_speed += power;
         
-        } else {
-        post_states(false);
+            this.status = "ing";
+            this.current_Speed += power;
+        } 
+        else {
+            post_states(false);
         }
-        return current_speed;
-        }
+        return current_Speed;
+    }
 
 
 
@@ -32,7 +34,8 @@ public class PublicTransport {
     // change Status
     public boolean post_states(boolean change) {
         if (change == false || this.current_Oil == 0) {
-        status = "Final";
+            status = "Final";
+        
         }
         return change;
     }
@@ -47,18 +50,35 @@ public class PublicTransport {
 
     // on board
     public void board(int passengers) {
-        this.current_passenger += passengers;
+        this.current_Passenger += passengers;
         
-        if (current_passenger > max_passenger) {
-        System.out.println("Exceed the Limit");
-        this.current_passenger -= passengers;
-        } else {
-        System.out.println("Passenger(s) is(are) = " + passengers);
-        System.out.println("Now Passenger(s) = " + (this.max_passenger - passengers));
-        System.out.println("Check the payment = " + (this.fare * passengers));
+        if (current_Passenger > max_Passenger) {
+            System.out.println("Exceed the Limit");
+            this.current_Passenger -= passengers;
+        } 
+        else {
+            System.out.println("Passenger(s) is(are) = " + passengers);
+            System.out.println("Now Passenger(s) = " + (this.max_Passenger - passengers));
+            System.out.println("Check the payment = " + (this.fare * passengers));
         }
         
         
+    }
+
+    public void taxi_board(int passengers) {
+        this.current_Passenger += passengers;
+            
+            if (current_Passenger > max_Passenger) {
+                System.out.println("Exceed the Limit");
+                this.current_Passenger -= passengers;
+            } 
+            else {
+                System.out.println("Passenger(s) is(are) = " + passengers);
+                System.out.println("Now Passenger(s) = " + (this.max_Passenger - passengers));
+                System.out.println("Check the payment = " + this.fare);
+            }
+            
+            
         }
 
 
