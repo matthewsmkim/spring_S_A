@@ -47,28 +47,6 @@ public class Bus extends PublicTransport {
     return current_Speed;
     }
 
-    public static void main(String[] args)
-    {
-    Bus bus1 = new Bus();
-    
-        bus1.board(2);
-        bus1.current_oil(-50);
-        bus1.post_states(false);
-        bus1.current_oil(10);
-        bus1.get_bus_states_info();
-        bus1.post_states(true);
-        bus1.board(45);
-        bus1.board(5);
-        bus1.current_oil(-55);
-        bus1.get_bus_states_info();
-    
-    
-    
-    
-    
-    
-    
-    }
 
 
 

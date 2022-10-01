@@ -4,7 +4,8 @@ public class PublicTransport {
     int current_Oil = 100;
     int current_Speed = 0;
     boolean change_Speed;
-    int fare;
+    int fare = 1000;
+    int taxiFare = 3000;
 
     int current_Passenger;
     int max_Passenger;
@@ -59,7 +60,7 @@ public class PublicTransport {
         else {
             System.out.println("Passenger(s) is(are) = " + passengers);
             System.out.println("Now Passenger(s) = " + (this.max_Passenger - passengers));
-            System.out.println("Check the payment = " + (this.fare * passengers));
+            System.out.println("Check the payment = " + (this.taxiFare ));
         }
         
         

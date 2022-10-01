@@ -1,5 +1,5 @@
 package S_A;
-public class Taxi extends PublicTransport{
+public class Taxi extends PublicTransport {
 
     int taxi_Number;
     
@@ -71,20 +71,7 @@ public class Taxi extends PublicTransport{
         }
     
     
-    public static void main(String[] args){
-
-        Taxi taxi1 = new Taxi();
-        
-        taxi1.board(2);
-        taxi1.location("Seoul Station", 2);
-        taxi1.get_payment(2);
-        taxi1.get_taxi_states_info();
     
-
-        
-    
-    
-    }
 
 }
 
